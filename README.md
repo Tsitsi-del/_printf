@@ -92,5 +92,7 @@ You are not allowed to use malloc, free or arrays
 You can only declare a maximum of two variables in your function
 
 Contributors:
-Tsitsi-del
-Perpetual Okorie
+
+Perpetual Okorie [AmazedWonder](https://github.com/AmazedWonder)
+
+Tsitsi-del [Tsitsi-del](https://github.com/Tsitsi-del)
