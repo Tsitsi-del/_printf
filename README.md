@@ -1,95 +1,211 @@
+# Project: 0x11. C - printf
+
+## Resources
+
+#### Read or watch:
+
+* [Secrets of printf](https://intranet.alxswe.com/rltoken/7Vw7aUWgwC7JYUrqI4bh4Q)
+* [Group Projects concept page (Don’t forget to read this)]()
+* [Flowcharts concept page]()
+## Tasks
+
+| Task | File |
+| ---- | ---- |
+| 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life | [SOON](./) |
+| 1. Education is when you read the fine print. Experience is what you get if you don't | [SOON](./) |
+| 2. With a face like mine, I do better in print | [SOON](./) |
+| 3. What one has not experienced, one will never understand in print | [SOON](./) |
+| 4. Nothing in fine print is ever good news | [SOON](./) |
+| 5. My weakness is wearing too much leopard print | [SOON](./) |
+| 6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print | [SOON](./) |
+| 7. The big print gives and the small print takes away | [SOON](./) |
+| 8. Sarcasm is lost in print | [SOON](./) |
+| 9. Print some money and give it to us for the rain forests | [SOON](./) |
+| 10. The negative is the equivalent of the composer's score, and the print the performance | [SOON](./) |
+| 11. It's depressing when you're still around and your albums are out of print | [SOON](./) |
+| 12. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection | [SOON](./) |
+| 13. Print is the sharpest and the strongest weapon of our party | [SOON](./) |
+| 14. The flood of print has turned reading into a process of gulping rather than savoring | [SOON](./) |
+| 15. * | [SOON](./) |
+
+# More Info
+Authorized functions and macros
+write (man 2 write)
+malloc (man 3 malloc)
+free (man 3 free)
+va_start (man 3 va_start)
+va_end (man 3 va_end)
+va_copy (man 3 va_copy)
+va_arg (man 3 va_arg)
+
+Compilation
+Code will be compiled this way:
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+
 # Tasks
 
-* 0.. Print list
-Write a function that prints all the elements of a listint_t list.
-Prototype: size_t print_listint(const listint_t *h);
-Return: the number of nodes
-Format: see example
-You are allowed to use printf
+0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 
-* 1.. List length
-Write a function that returns the number of elements in a linked listint_t list.
-Prototype: size_t listint_len(const listint_t *h);
+Write a function that produces output according to a format.
 
-* 2.. Add node
-Write a function that adds a new node at the beginning of a listint_t list.
-Prototype: listint_t *add_nodeint(listint_t **head, const int n);
-Return: the address of the new element, or NULL if it failed
+Prototype: int _printf(const char *format, ...);
+Returns: the number of characters printed (excluding the null byte used to end output to strings)
+write output to stdout, the standard output stream
+format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers:
+c
+s
+%
+You don’t have to reproduce the buffer handling of the C library printf function
+You don’t have to handle the flag characters
+You don’t have to handle field width
+You don’t have to handle precision
+You don’t have to handle the length modifiers
 
-* 3.. Add node at the end
-Write a function that adds a new node at the end of a listint_t list.
-Prototype: listint_t *add_nodeint_end(listint_t **head, const int n);
-Return: the address of the new element, or NULL if it failed
+    
+1. Education is when you read the fine print. Experience is what you get if you don't
 
-* 4.. Free list
-Write a function that frees a listint_t list.
-Prototype: void free_listint(listint_t *head);
+Handle the following conversion specifiers:
 
-* 5.. Free
-Write a function that frees a listint_t list.
-Prototype: void free_listint2(listint_t **head);
-The function sets the head to NULL
+d
+i
+You don’t have to handle the flag characters
+You don’t have to handle field width
+You don’t have to handle precision
+You don’t have to handle the length modifiers
 
-* 6.. Pop
-Write a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
-Prototype: int pop_listint(listint_t **head);
-if the linked list is empty return 0
+    
+2. With a face like mine, I do better in print
+#adv
+Handle the following custom conversion specifiers:
 
-* 7.. Get node at index
-Write a function that returns the nth node of a listint_t linked list.
-Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
-where index is the index of the node, starting at 0
-if the node does not exist, return NULL
+b: the unsigned int argument is converted to binary
+alex@ubuntu:~/c/printf$ cat main.c
+#include "main.h"
 
-* 8.. Sum list
-Write a function that returns the sum of all the data (n) of a listint_t linked list.
-Prototype: int sum_listint(listint_t *head);
-if the list is empty, return 0
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+    _printf("%b\n", 98);
+    return (0);
+}
+alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 main.c
+alex@ubuntu:~/c/printf$ ./a.out
+1100010
+alex@ubuntu:~/c/printf$
 
-* 9.. Insert
-Write a function that inserts a new node at a given position.
-Prototype: listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
-where idx is the index of the list where the new node should be added. Index starts at 0
-Returns: the address of the new node, or NULL if it failed
-if it is not possible to add the new node at index idx, do not add the new node and return NULL
+   
+3. What one has not experienced, one will never understand in print
+#adv
+Handle the following conversion specifiers:
 
-* 10.. Delete at index
-Write a function that deletes the node at index index of a listint_t linked list.
-Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
-where index is the index of the node that should be deleted. Index starts at 0
-Returns: 1 if it succeeded, -1 if it failed
+u
+o
+x
+X
+You don’t have to handle the flag characters
+You don’t have to handle field width
+You don’t have to handle precision
+You don’t have to handle the length modifiers
 
-* 11.. Reverse list
-Write a function that reverses a listint_t linked list.
-Prototype: listint_t *reverse_listint(listint_t **head);
-Returns: a pointer to the first node of the reversed list
-You are not allowed to use more than 1 loop.
-You are not allowed to use malloc, free or arrays
-You can only declare a maximum of two variables in your function
+    
+4. Nothing in fine print is ever good news
+#adv
+Use a local buffer of 1024 chars in order to call write as little as possible.
 
-* 12.. Print (safe version)
-Write a function that prints a listint_t linked list.
-Prototype: size_t print_listint_safe(const listint_t *head);
-Returns: the number of nodes in the list
-This function can print lists with a loop
-You should go through the list only once
-If the function fails, exit the program with status 98
-Output format: see example
+    
+5. My weakness is wearing too much leopard print
+#adv
+Handle the following custom conversion specifier:
 
-* 13.. Free (safe version)
-Write a function that frees a listint_t list.
-Prototype: size_t free_listint_safe(listint_t **h);
-This function can free lists with a loop
-You should go though the list only once
-Returns: the size of the list that was free’d
-The function sets the head to NULL
+S : prints the string.
+Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+alex@ubuntu:~/c/printf$ cat main.c
+#include "main.h"
 
-* 14.. Find the loop
-Write a function that finds the loop in a linked list.
-Prototype: listint_t *find_listint_loop(listint_t *head);
-Returns: The address of the node where the loop starts, or NULL if there is no loop
-You are not allowed to use malloc, free or arrays
-You can only declare a maximum of two variables in your function
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+    _printf("%S\n", "Best\nSchool");
+    return (0);
+}
+alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 main.c
+alex@ubuntu:~/c/printf$ ./a.out
+Best\x0ASchool
+alex@ubuntu:~/c/printf$
+
+   
+6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
+#adv
+Handle the following conversion specifier: p.
+
+You don’t have to handle the flag characters
+You don’t have to handle field width
+You don’t have to handle precision
+You don’t have to handle the length modifiers
+
+    
+7. The big print gives and the small print takes away
+#adv
+Handle the following flag characters for non-custom conversion specifiers:
+
++
+space
+#
+
+    
+8. Sarcasm is lost in print
+#adv
+Handle the following length modifiers for non-custom conversion specifiers:
+
+l
+h
+Conversion specifiers to handle: d, i, u, o, x, X
+
+    
+9. Print some money and give it to us for the rain forests
+#adv
+Handle the field width for non-custom conversion specifiers.
+
+    
+10. The negative is the equivalent of the composer's score, and the print the performance
+#adv
+Handle the precision for non-custom conversion specifiers.
+
+     
+11. It's depressing when you're still around and your albums are out of print
+#adv
+Handle the 0 flag character for non-custom conversion specifiers.
+
+    
+12. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
+#adv
+Handle the - flag character for non-custom conversion specifiers.
+
+    
+13. Print is the sharpest and the strongest weapon of our party
+#adv
+Handle the following custom conversion specifier:
+
+r : prints the reversed string
+    
+14. The flood of print has turned reading into a process of gulping rather than savoring
+#adv
+Handle the following custom conversion specifier:
+
+R: prints the rot13'ed string
+    
+15. *
+#adv
+All the above options work well together.
+
 
 Contributors:
 
